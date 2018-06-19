@@ -13,9 +13,5 @@ namespace MVC.ANG.Controllers
         {
             return View();
         }
-
-        public ActionResult GetLast() {
-            return View();
-        }
     }
 }

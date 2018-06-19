@@ -124,6 +124,7 @@
     <Content Include="Scripts\jquery\jquery-3.0.0.slim.min.js" />
     <Content Include="Scripts\jquery\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\ng-modules\peoplehub.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Web.config" />
   </ItemGroup>
