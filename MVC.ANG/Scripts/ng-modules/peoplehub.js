@@ -1,15 +1,23 @@
 ﻿(function () {
-    var peopleHub = function ($http) {
+    var peopleHub = function ($http, $log) {
+        var getMessage = function () {
+            return "Hub";
+        };
+
         var getLastUser = function () {
-            return $http.get("Data/GetLastPerson")
+            $log.log("getLastUser");
+            return $http.get("/Data/GetLastPerson")
                 .then(function (response) {
+                    //$log.log(response.data);
                     return response.data;
                 });
         };
 
         return {
-            getLastUser: getLastUser
+            getLastUser: getLastUser,
+            getMessage: getMessage
         };
     };
-    var module = angular.module('PepsApp').factory('peopleHub', peopleHub);
+
+    var module = angular.module('PepsApp').factory("peopleHub", peopleHub);
 }());

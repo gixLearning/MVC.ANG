@@ -3,8 +3,8 @@
     ViewBag.Title = "Index";
 }
 
-<div ng-controller="HomeController">
+<div ng-controller="HubController">
     {{ message }}
 
-    {{  }}
+    <pre ng-show="Hub">{{ Hub | json }}</pre>
 </div>
