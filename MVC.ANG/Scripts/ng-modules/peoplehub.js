@@ -13,6 +13,13 @@
                 });
         };
 
+        var getListOfPeople = function () {
+            return $http.get("/Data/GetListOfPeople")
+                .then(function (response) {
+                    return response.data;
+                });
+        };
+
         return {
             getLastUser: getLastUser,
             getMessage: getMessage
