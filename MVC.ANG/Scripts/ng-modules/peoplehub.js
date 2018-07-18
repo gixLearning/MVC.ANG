@@ -14,15 +14,18 @@
         };
 
         var getListOfPeople = function () {
+            $log.log("getListOfPeople");
             return $http.get("/Data/GetListOfPeople")
                 .then(function (response) {
+                    $log.log(response);
                     return response.data;
                 });
         };
 
         return {
             getLastUser: getLastUser,
-            getMessage: getMessage
+            getMessage: getMessage,
+            getListOfPeople: getListOfPeople
         };
     };
 

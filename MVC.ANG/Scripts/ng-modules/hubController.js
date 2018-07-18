@@ -5,11 +5,12 @@
 
         var onSuccess = function (data) {
             $scope.Hub = data;
+            //return data;
         };
         var onError = function (reason) {
             $scope.error = "Could not get data";
         };
 
-        peopleHub.getLastUser().then(onSuccess, onError);
+        peopleHub.getListOfPeople().then(onSuccess, onError);
     });
 }());

@@ -1,10 +1,15 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
 <div ng-controller="HubController">
     {{ message }}
-
-    <pre ng-show="Hub">{{ Hub | json }}</pre>
+    <br />
+    @*<pre ng-show="Hub">{{ Hub | json }}</pre>*@
+    <span>Sort: </span><a href="#sortFirstname">Firstname</a> <a href="#sortFirstname">Lastname</a> 
+    <table>
+        <tr ng-repeat="x in Hub">
+            <td>{{ x.Firtsname + " " + x.Lastname }}</td>
+        </tr>
+    </table>
 </div>
