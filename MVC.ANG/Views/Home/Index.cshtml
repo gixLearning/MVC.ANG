@@ -6,10 +6,34 @@
     {{ message }}
     <br />
     @*<pre ng-show="Hub">{{ Hub | json }}</pre>*@
-    <span>Sort: </span><a href="#sortFirstname">Firstname</a> <a href="#sortFirstname">Lastname</a> 
-    <table>
-        <tr ng-repeat="x in Hub">
-            <td>{{ x.Firtsname + " " + x.Lastname }}</td>
-        </tr>
-    </table>
+    <div ng-show="Hub">
+        <span>Sort: </span>
+        <a href="#" ng-click="orderByMe('Firtsname')">Firstname</a> 
+        <a href="#" ng-click="orderByMe('Lastname')">Lastname</a> 
+        <a href="#" ng-click="orderByMe('Country')">Country</a>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Country</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="x in Hub | orderBy:myOrderBy">
+                <td>{{ x.Firtsname + " " + x.Lastname }}</td>
+                <td>{{ x.Country }}</td>
+                <td>
+                    @using (Ajax.BeginForm("Edit", new AjaxOptions() {
+                        HttpMethod = "GET",
+                        UpdateTargetId = "EditView",
+                        InsertionMode = InsertionMode.Replace
+                    })) {
+                        <input type="hidden" name="id" value="{{ x.Id }}" />
+                        <input type="submit" value="Edit" class="btn btn-default btn-sm" />
+                    }
+                </td>
+            </tr>
+        </table>         
+    </div>
+    <div id="EditView">
+        <p>view</p>
+    </div>
 </div>

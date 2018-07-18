@@ -10,5 +10,6 @@ namespace MVC.ANG.Models {
         public string Lastname { get; set; }
         public string ProfilePicPath { get; set; }
         public int Phonenumber { get; set; }
+        public string Country { get; set; }
     }
 }
