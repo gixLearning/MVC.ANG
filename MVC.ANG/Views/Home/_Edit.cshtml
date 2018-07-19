@@ -1,9 +1,8 @@
 ﻿@model MVC.ANG.Models.Person
 
-@using (Html.BeginForm())
-{
+@using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Person</h4>
         <hr />
@@ -55,9 +54,6 @@
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

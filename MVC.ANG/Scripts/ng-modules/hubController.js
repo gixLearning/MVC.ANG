@@ -11,7 +11,7 @@
             $scope.error = "Could not get data";
         };
 
-        $scope.orderByMe = function(order) {
+        $scope.orderByMe = function (order) {
             $scope.myOrderBy = order;
         }
 
